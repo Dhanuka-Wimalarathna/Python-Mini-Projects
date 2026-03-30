@@ -19,8 +19,7 @@ def add_expense(description, amount):
 
     expenses.append(new_expense)
     save_expenses(expenses)
-    return new_expense
-
+    print(f"Expense ID- {new_id} added successfully!")
 
 # List Expenses
 def list_expenses():
@@ -30,10 +29,10 @@ def list_expenses():
         print("No expenses found!")
         return
     
-    print(f"{'ID':<5} {'Date':<12} {'Description':<20} {'Amount':<10}")
+    print(f"{'ID':<5} {'Description':<20} {'Amount':<10}  {'Date':<12}")
     print("-" * 60)
     for e in expenses:
-        print(f"{e['id']:<5} {e['date']:<12} {e['description']:<20} ${e['amount']:<10}")
+        print(f"{e['id']:<5} {e['description']:<20} Rs.{e['amount']:<10}  {e['date']:<12}")
 
 
 # Delete Expense

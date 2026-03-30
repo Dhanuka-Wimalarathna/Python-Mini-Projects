@@ -9,7 +9,10 @@ DATA_FILE = 'expenses.json'
 def load_expenses():
     try:
         with open (DATA_FILE, 'r') as file:
-            return json.load(file)
+            content = file.read().strip()
+            if not content:
+                return[]
+            return json.loads(content)
     except FileNotFoundError:
         return[]
 
