@@ -1,5 +1,6 @@
 # Main Entry Point
 
+import utils.session
 import argparse
 from expenses import add_expense, list_expenses, delete_expense
 from summary import total_summary, monthly_summary

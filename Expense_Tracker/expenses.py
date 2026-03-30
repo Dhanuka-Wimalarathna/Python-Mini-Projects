@@ -14,7 +14,7 @@ def add_expense(description, amount):
         "id": new_id,
         "description": description,
         "amount": amount,
-        "date": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        "date": datetime.now().strftime("%Y-%m-%d")
     }
 
     expenses.append(new_expense)
@@ -42,8 +42,8 @@ def delete_expense(id):
     new_expenses = [e for e in expenses if e['id'] != id]
 
     if len(new_expenses) == len(expenses):
-        print ("Expense ID {id} not found!")
+        print (f"Expense ID- {id} not found!")
         return False
 
-    save_expenses(expenses)
-    return True
+    save_expenses(new_expenses)
+    print(f"Expense ID- {id} deleted Succesfully!")
